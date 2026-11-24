@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '=== CLAUDE.md: re-injected at session start/resume/clear/compact. Follow it strictly. ==='; cat \"$CLAUDE_PROJECT_DIR/CLAUDE.md\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '=== CLAUDE.md: re-injected on this prompt. Follow it strictly, including the prompts.md log and diagram rules. ==='; cat \"$CLAUDE_PROJECT_DIR/CLAUDE.md\""
+          }
+        ]
+      }
+    ]
+  }
+}
